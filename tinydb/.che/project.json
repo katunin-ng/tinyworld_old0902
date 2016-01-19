@@ -1,0 +1,1 @@
+{"type":"sap.hdb","builders":{"default":"hdi-builder","configs":{}},"runners":{"configs":{}},"attributes":{"mta_module_parent":["/tinyworld"],"sap.watt.common.setting":["{\"generation\":[{\"templateId\":\"hanatemplates.hanadbproject\",\"templateVersion\":\"1.0.0\",\"dateTimeStamp\":\"Sun, 17 Jan 2016 20:00:44 GMT\"}]}"]},"mixinTypes":["mtamodule"]}
