@@ -4,39 +4,37 @@ version: 0.0.1
 modules:
 - name: tinydb
   type: hdb
-  path: ./tinydb
+  path: tinydb
   requires:
   - name: hdi-container
 
+
 - name: tinyjs
   type: nodejs
-  path: ./tinyjs
+  path: tinyjs
+# ------- dependency on DB  
   requires:
   - name: tinydb
   - name: hdi-container
-  - name: tiny_uaa 
+#---------------- exposes SERVICE URL to consumers
   provides:
   - name: tinyjs_api
     properties:
       service_url: ${default-url}
-
+# ----
+  
 - name: tinyui
   type: html5
-  path: ./tinyui
+  path: tinyui
+# -- requires tinyjs service URL
   requires:
-  - name: tiny_uaa
-  - name: tinyjs_api
-    group: destinations          
-    properties:
-       name: tinyjs_url
-       url:  ~{service_url}
-       forwardAuthToken: true
+     - name: tinyjs_api
+       group: destinations          
+       properties:
+          name: tinyjs_url            
+          url:  ~{service_url}
+  
 
 resources:
 - name: hdi-container
   type: com.sap.xs.hdi-container
-- name: tiny_uaa                          
-  type: com.sap.xs.uaa
-  parameters:
-    path: ./xs-security.json
-  

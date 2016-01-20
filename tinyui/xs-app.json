@@ -1,16 +1,5 @@
 {
 	"welcomeFile": "index.html",
-	"authenticationMethod": "route",
-	"routes": [{
-		"source": "^/euro.xsodata/",
-		"destination": "tinyjs_url",
-		"authenticationType": "xsuaa",
-		"scope": "tinyworld.view"
-	},
-	{
-		"source": "^/(.*)$",
-		"localDir" : "resources",
-		"scope" : "tinyworld.view"
-	}]	
+	"authenticationMethod": "none",
+	"routes": [{"source": "/euro.xsodata/", "destination": "tinyjs_url"}]
 }
-    
