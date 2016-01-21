@@ -6,7 +6,7 @@ var xsenv = require("sap-xsenv");
 var port  = process.env.PORT || 3000;
 
 var options = xsjs.extend({
-	anonymous : true, // remove to authenticate calls
+//	anonymous : true, // remove to authenticate calls
 	redirectUrl : "/index.xsjs"
 });
 
@@ -14,7 +14,7 @@ var options = xsjs.extend({
 options = xsjs.extend(options, xsenv.getServices({ hana: {tag: "hana"} }));
 
 // configure UAA
-//options = xsjs.extend(options, xsenv.getServices({ uaa: {tag: "xsuaa"} }));
+options = xsjs.extend(options, xsenv.getServices({ uaa: {tag: "xsuaa"} }));
 
 // start server
 xsjs(options).listen(port);
