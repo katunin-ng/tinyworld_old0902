@@ -14,7 +14,7 @@ var options = xsjs.extend({
 options = xsjs.extend(options, xsenv.getServices({ hana: {tag: "hana"} }));
 
 // configure UAA
-//options = xsjs.extend(options, xsenv.getServices({ uaa: {tag: "xsuaa"} }));
+options = xsjs.extend(options, xsenv.getServices({ uaa: {tag: "xsuaa"} }));
 
 // start server
 xsjs(options).listen(port);
